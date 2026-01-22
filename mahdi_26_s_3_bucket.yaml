@@ -1,26 +1,3 @@
-AWSTemplateFormatVersion: "2010-09-09"
-Description: "Create an S3 bucket with a unique name"
-
-Resources:
-  MahdiS3Bucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: mahdi26s3test
-      VersioningConfiguration:
-        Status: Enabled
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: true
-        BlockPublicPolicy: true
-        IgnorePublicAcls: true
-        RestrictPublicBuckets: true
-      Tags:
-        - Key: Name
-          Value: mahdi26s3test
-
-Outputs:
-  BucketName:
-    Description: "The name of the S3 bucket"
-    Value: !Ref MahdiS3Bucket
-  BucketArn:
-    Description: "The ARN of the S3 bucket"
-    Value: !GetAtt MahdiS3Bucket.Arn
+template-file-path: mahdi_26_s_3_bucket.yaml
+parameters: {}
+tags: {}
