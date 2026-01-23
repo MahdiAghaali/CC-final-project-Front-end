@@ -13,8 +13,8 @@
         }
 
         body {
-            background: #0f172a;
-            color: #e5e7eb;
+            background: #f8fafc;
+            color: #0f172a;
             min-height: 100vh;
             display: flex;
             align-items: center;
@@ -23,34 +23,34 @@
         }
 
         .card {
-            background: #020617;
-            border-radius: 14px;
+            background: #ffffff;
+            border-radius: 16px;
             padding: 32px;
             width: 100%;
             max-width: 420px;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
+            border: 1px solid #e5e7eb;
         }
 
         h2 {
             margin: 0 0 8px;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
             text-align: center;
         }
 
         p {
             text-align: center;
-            font-size: 0.9rem;
-            color: #94a3b8;
+            font-size: 0.95rem;
+            color: #475569;
             margin-bottom: 24px;
         }
 
         input[type="file"] {
             width: 100%;
-            padding: 10px;
-            border-radius: 8px;
-            border: 1px dashed #334155;
-            background: #020617;
-            color: #e5e7eb;
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px dashed #cbd5f5;
+            background: #f8fafc;
             cursor: pointer;
         }
 
@@ -59,15 +59,20 @@
             width: 100%;
             padding: 12px;
             border: none;
-            border-radius: 10px;
+            border-radius: 12px;
             background: #2563eb;
             color: white;
             font-size: 1rem;
             cursor: pointer;
+            transition: background 0.2s ease;
+        }
+
+        button:hover:not(:disabled) {
+            background: #1d4ed8;
         }
 
         button:disabled {
-            background: #1e40af;
+            background: #93c5fd;
             cursor: not-allowed;
         }
 
@@ -75,8 +80,8 @@
             margin: 20px auto;
             width: 42px;
             height: 42px;
-            border: 4px solid #1e293b;
-            border-top: 4px solid #3b82f6;
+            border: 4px solid #e5e7eb;
+            border-top: 4px solid #2563eb;
             border-radius: 50%;
             animation: spin 1s linear infinite;
             display: none;
@@ -90,14 +95,14 @@
 
         pre {
             margin-top: 20px;
-            padding: 14px;
-            background: #020617;
-            border-radius: 10px;
+            padding: 16px;
+            background: #f8fafc;
+            border-radius: 12px;
             max-height: 220px;
             overflow-y: auto;
             white-space: pre-wrap;
             font-size: 0.9rem;
-            border: 1px solid #1e293b;
+            border: 1px solid #e5e7eb;
         }
     </style>
 </head>
