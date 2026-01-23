@@ -1,24 +1,121 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
     <title>Image to Text</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        }
+
+        body {
+            background: #0f172a;
+            color: #e5e7eb;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+
+        .card {
+            background: #020617;
+            border-radius: 14px;
+            padding: 32px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: 1.4rem;
+            text-align: center;
+        }
+
+        p {
+            text-align: center;
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 24px;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px dashed #334155;
+            background: #020617;
+            color: #e5e7eb;
+            cursor: pointer;
+        }
+
+        button {
+            margin-top: 16px;
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 10px;
+            background: #2563eb;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background: #1e40af;
+            cursor: not-allowed;
+        }
+
+        .loader {
+            margin: 20px auto;
+            width: 42px;
+            height: 42px;
+            border: 4px solid #1e293b;
+            border-top: 4px solid #3b82f6;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            display: none;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        pre {
+            margin-top: 20px;
+            padding: 14px;
+            background: #020617;
+            border-radius: 10px;
+            max-height: 220px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            font-size: 0.9rem;
+            border: 1px solid #1e293b;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="card">
+        <h2>Image to Text</h2>
+        <p>Upload an image (max 1MB)</p>
 
-    <h2>Upload Image (Max 1MB)</h2>
-    <p>PIPELINE WORKING</p>
+        <input type="file" id="fileInput" accept="image/*" />
+        <button id="uploadBtn">Extract Text</button>
 
-    <input type="file" id="fileInput" accept="image/*" />
-    <br><br>
-    <button onclick="uploadImage()">Upload</button>
+        <div class="loader" id="loader"></div>
 
-    <h3>Extracted Text:</h3>
-    <pre id="output"></pre>
+        <pre id="output"></pre>
+    </div>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
